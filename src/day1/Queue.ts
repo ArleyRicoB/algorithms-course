@@ -2,6 +2,10 @@ type Node<T> = {
   value: T;
   next?: Node<T>;
 };
+
+// A -> B -> C -> D (where A is head and D is tail)
+// FIFO
+
 export default class Queue<T> {
   public length: number;
   private head?: Node<T>;
