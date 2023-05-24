@@ -12,22 +12,22 @@ function qs(arr: number[], lo: number, hi: number): void {
 function partition(arr: number[], lo: number, hi: number): number {
   const pivot = arr[hi];
 
-  let idx = lo - 1;
+  let peque = lo - 1;
 
   for (let i = lo; i < hi; ++i) {
     if (arr[i] <= pivot) {
-      idx++;
+      peque++;
       const tmp = arr[i];
-      arr[i] = arr[idx];
-      arr[idx] = tmp;
+      arr[i] = arr[peque];
+      arr[peque] = tmp;
     }
   }
 
-  idx++;
-  arr[hi] = arr[idx];
-  arr[idx] = pivot;
+  peque++;
+  arr[hi] = arr[peque];
+  arr[peque] = pivot;
 
-  return idx;
+  return peque;
 }
 
 export default function quick_sort(arr: number[]): void {
